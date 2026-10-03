@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <TargetPlatformMoniker>Windows,Version=7.0</TargetPlatformMoniker>
+    <TargetPlatformDisplayName>Windows</TargetPlatformDisplayName>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>assets\AntiStealer-TXC-v2.ico</ApplicationIcon>
+    <AssemblyName>AntiStealer</AssemblyName>
+    <RootNamespace>AntiStealer</RootNamespace>
+    <Version>0.3.3</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="service\**\*.cs" />
+    <Compile Remove="package\**\*.cs" />
+    <EmbeddedResource Include="assets\AntiStealer-TXC-v2.ico" LogicalName="AntiStealer.AppIcon.ico" />
+    <EmbeddedResource Include="assets\AntiStealer-TXC-v2.png" LogicalName="AntiStealer.AppLogo.png" />
+  </ItemGroup>
+</Project>

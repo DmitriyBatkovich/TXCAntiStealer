@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TargetPlatformMoniker>Windows,Version=7.0</TargetPlatformMoniker>
+    <TargetPlatformDisplayName>Windows</TargetPlatformDisplayName>
+    <AssemblyName>AntiStealer.Service</AssemblyName>
+    <RootNamespace>AntiStealer</RootNamespace>
+    <ApplicationIcon>..\assets\AntiStealer-TXC-v2.ico</ApplicationIcon>
+    <Version>0.3.3</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\AllowlistStore.cs" Link="Core\AllowlistStore.cs" />
+    <Compile Include="..\AuditEventParser.cs" Link="Core\AuditEventParser.cs" />
+    <Compile Include="..\FirewallBlocker.cs" Link="Core\FirewallBlocker.cs" />
+    <Compile Include="..\FirewallGuard.cs" Link="Core\FirewallGuard.cs" />
+    <Compile Include="..\IntegrityGuard.cs" Link="Core\IntegrityGuard.cs" />
+    <Compile Include="..\Models.cs" Link="Core\Models.cs" />
+    <Compile Include="..\NativeNetwork.cs" Link="Core\NativeNetwork.cs" />
+    <Compile Include="..\ProcessInspector.cs" Link="Core\ProcessInspector.cs" />
+    <Compile Include="..\ProtectionEngine.cs" Link="Core\ProtectionEngine.cs" />
+    <Compile Include="..\RiskScorer.cs" Link="Core\RiskScorer.cs" />
+    <Compile Include="..\SensitiveTargetPolicy.cs" Link="Core\SensitiveTargetPolicy.cs" />
+    <Compile Include="..\SelfTest.cs" Link="Core\SelfTest.cs" />
+    <Compile Include="..\SignatureVerifier.cs" Link="Core\SignatureVerifier.cs" />
+    <Compile Include="..\TrustedToolsPolicy.cs" Link="Core\TrustedToolsPolicy.cs" />
+    <Content Include="..\ProtectedPaths.json" Link="ProtectedPaths.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

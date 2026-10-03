@@ -1,0 +1,51 @@
+[Version]
+Signature = "$WINDOWS NT$"
+Class = "ActivityMonitor"
+ClassGuid = {b86dff51-a31e-4bac-b3cf-e8cfe75c9fc2}
+Provider = %ProviderName%
+DriverVer = 10/03/2026,0.3.0.0
+CatalogFile = AntiStealerFilter.cat
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+AntiStealerFilter.DriverFiles = 12
+
+[DefaultInstall.NTamd64]
+CopyFiles = AntiStealerFilter.DriverFiles
+
+[DefaultInstall.NTamd64.Services]
+AddService = %ServiceName%,,AntiStealerFilter.Service
+
+[AntiStealerFilter.Service]
+DisplayName = %ServiceDisplayName%
+Description = %ServiceDescription%
+ServiceBinary = %12%\AntiStealerFilter.sys
+Dependencies = FltMgr
+ServiceType = 2
+StartType = 3
+ErrorControl = 1
+LoadOrderGroup = "FSFilter Activity Monitor"
+AddReg = AntiStealerFilter.AddRegistry
+
+[AntiStealerFilter.AddRegistry]
+HKR,"Instances","DefaultInstance",0x00000000,%DefaultInstance%
+HKR,"Instances\%DefaultInstance%","Altitude",0x00000000,"385201"
+HKR,"Instances\%DefaultInstance%","Flags",0x00010001,0
+
+[AntiStealerFilter.DriverFiles]
+AntiStealerFilter.sys
+
+[SourceDisksFiles]
+AntiStealerFilter.sys = 1,,
+
+[SourceDisksNames]
+1 = %DiskName%,,,
+
+[Strings]
+ProviderName = "AntiStealer"
+ServiceName = "AntiStealerFilter"
+ServiceDisplayName = "AntiStealer Credential Store Guard"
+ServiceDescription = "Blocks untrusted reads of browser, messenger, Steam and wallet credential stores."
+DefaultInstance = "AntiStealerFilter Instance"
+DiskName = "AntiStealer Driver Package"

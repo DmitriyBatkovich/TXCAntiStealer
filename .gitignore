@@ -1,0 +1,39 @@
+# Visual Studio / .NET
+.vs/
+**/bin/
+**/obj/
+**/dist/
+*.user
+*.suo
+*.pdb
+*.cache
+
+# WDK build and signing output
+driver/build/
+*.sys
+*.cat
+*.cer
+*.pfx
+*.pvk
+*.snk
+
+# Local distribution packages
+package/
+*.zip
+
+# Runtime state and logs
+*.log
+notifications.jsonl
+integrity-baseline.json
+allowlist.json
+quarantine/
+
+# Retired design draft; v2 is the application asset
+assets/*-v1.png
+assets/*-v1.ico
+
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
